@@ -9,7 +9,7 @@ class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = User
 
-    email = factory.Faker('email')
+    email = factory.Faker("email")
 
     @factory.post_generation
     def password(self, create, extracted, **kwargs):
@@ -31,7 +31,7 @@ class UserFactory(factory.django.DjangoModelFactory):
 class ProfileFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Profile
-        django_get_or_create = ('user',)
+        django_get_or_create = ("user",)
 
     type = Profile.TRADER
     user = factory.SubFactory(UserFactory, profile=None)

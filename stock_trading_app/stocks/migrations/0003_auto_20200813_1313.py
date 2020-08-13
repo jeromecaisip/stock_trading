@@ -6,18 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('stocks', '0002_auto_20200813_1309'),
+        ("stocks", "0002_auto_20200813_1309"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='order',
-            old_name='trade_at',
-            new_name='traded_at',
+            model_name="order", old_name="trade_at", new_name="traded_at",
         ),
         migrations.AlterField(
-            model_name='order',
-            name='transaction_type',
-            field=models.CharField(choices=[('B', 'Buy'), ('S', 'Sell')], max_length=1),
+            model_name="order",
+            name="transaction_type",
+            field=models.CharField(choices=[("B", "Buy"), ("S", "Sell")], max_length=1),
         ),
     ]

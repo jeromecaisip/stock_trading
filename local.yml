@@ -35,17 +35,3 @@ services:
     env_file:
       - ./.envs/.local/.postgres
 
-  docs:
-    image: stock_trading_app_local_docs
-    container_name: docs
-    build:
-      context: .
-      dockerfile: ./compose/local/docs/Dockerfile
-    env_file:
-      - ./.envs/.local/.django
-    volumes:
-      - ./docs:/docs
-      - ./config:/app/config
-      - ./stock_trading_app:/app/stock_trading_app
-    ports:
-      - "7000:7000"
